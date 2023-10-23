@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Section: Design Block -->
+    <section class="">
+      <!-- Jumbotron -->
+      <div
+        class="px-4 py-5 px-md-5 text-center text-lg-start"
+        style="background-color: hsl(0, 0%, 96%)"
+      >
+        <div class="container">
+          <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="my-5 display-3 fw-bold ls-tight">
+                Become our, <br />
+                <span class="text-warning">VENDOR!</span>
+              </h1>
+              <p style="color: hsl(217, 10%, 50.8%)">
+                Come joing us and show off you cooking talent nationwide!
+              </p> <br>
+              <button type="button" onclick="window.location.href='userSignUp.html';" class="btn btn-warning btn-lg btn-lg">Sign Up as Customer!</button>
+
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card">
+                <div class="card-body py-5 px-md-5">
+                  <div class="d-flex justify-content-center">
+                    <img src="https://img.freepik.com/premium-vector/chef-yellow-hat-cartoon-vector-illustration-kitchen-cooking-object-icon-concept-chef-cooking-hat-vector-design-isolated-white-background-bakery-logo-icon-concept_121104-1687.jpg" style="width: 20%; border-radius:50%;" />
+                  </div>
+                  <form method="POST" action="vendorSignUp.php">
+                    <!-- Username input -->
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="shopName" placeholder="Shop Name" name="shopName" required>
+                      <label for="floatingInput">Shop Name</label>
+                      <div class="invalid-feedback">Please enter your desired shop name.</div>
+                    </div>
+
+                    <!-- Description input -->
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="description" placeholder="Shop Description" name="description" required>
+                      <label for="floatingInput">Shop Dscription</label>
+                      <div class="invalid-feedback">Please enter your shop description.</div>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                      <label for="floatingInput">Email</label>
+                      <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+
+                    <!-- Phone input -->
+                    <div class="form-floating">
+                      <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone" required>
+                      <label for="floatingInput">Phone</label>
+                      <div class="invalid-feedback">Please enter a your phone number.</div>
+                    </div>
+                    
+                    <!-- Password input -->
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="password_1" placeholder="Password" name="password_1" required>
+                      <label for="floatingPassword">Password</label>
+                      <div class="invalid-feedback">Please enter a valid password.</div>
+                    </div>
+                    <div class="form-floating">
+                      <input type="password" class="form-control" id="password_2" placeholder="Password" name="password_2" required>
+                      <label for="floatingPassword">Confirm Password</label>
+                      <div class="invalid-feedback">Password does not match.</div>
+                    </div>
+                     <br>
+
+                    <!-- Submit button -->
+                    <div class="form-group">
+                      <input type="submit" name="signup_user" class="btn btn-warning btn-block mb-4" value=Submit>
+                    </div>
+                    <p>Already have an account? Log in<a class="mt-5 mb-3 text-muted" href="vendorLogin.html"><b> HERE</b></a></p>
+                    <p class="mt-5 mb-3 text-muted text-center">&copy; Homemade Food 2023</p>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+  </body>
+</html>
