@@ -32,7 +32,7 @@ include "database.php";
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
       <div class="logo">
-        <h1 class="text-light"><a href="index.html"><span>Homemade Food co,</span></a></h1>
+        <h1 class="text-light"><a href="index.php"><span>Homemade Food co,</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -84,18 +84,38 @@ include "database.php";
             </div>
 
             <form method="GET">
-                <label for="category"><h3>Category:</h3></label>
-                <select id="category" name="category" class="form-control" style="width:40%">
-                    <option value="">All Categories</option>
-                    <option value="rice">Rice</option>
-                    <option value="noodles">Noodles</option>
-                    <option value="drinks">Drinks</option>
-                    <option value="burger">Burger</option>
-                    <option value="others">Others</option>
-                </select>
-                <br>
-                <button type="submit" type="button" class="btn btn-warning">Apply Filters</button>
+            <div class="row" style="width:50%">
+              <div class="col">
+                <div class="input-group">
+                  <label for="category"><h3>Category: </h3></label>
+                  <select id="category" name="category" class="form-control" style="width:20%">
+                      <option value="">All Categories</option>
+                      <option value="rice">Rice</option>
+                      <option value="noodles">Noodles</option>
+                      <option value="drinks">Drinks</option>
+                      <option value="burger">Burger</option>
+                      <option value="others">Others</option>
+                  </select>
+                  </div>
                 </div>
+
+                <div class="col">
+                  <div class="input-group">
+                    <label for="allergy"><h3>Allergy: </h3></label>
+                    <select id="allergy" name="allergy" class="form-control" style="width:20%">
+                        <option value="">No Allergy</option>
+                        <option value="milk-eggs">Milk/Eggs</option>
+                        <option value="peanuts">Peanuts</option>
+                        <option value="soybeans">Soybeans</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="fish-sellfish">Fish & Shellfish</option>
+                        <option value="others">Others</option>
+                    </select>
+                  </div>
+                  </div>
+                <br><br>
+              </div>
+                <button type="submit" type="button" class="btn btn-warning">Apply Filters</button>
             </form>
             </div>
           </section>
@@ -110,6 +130,10 @@ include "database.php";
       if (isset($_GET["category"]) && !empty($_GET["category"])) {
           $category = mysqli_real_escape_string($conn, $_GET["category"]);
           $selectQuery .= " WHERE category = '$category'";
+      }
+      if (isset($_GET["allergy"]) && !empty($_GET["allergy"])) {
+        $allergy = mysqli_real_escape_string($conn, $_GET["allergy"]);
+        $selectQuery .= " WHERE allergy != '$allergy'";
       }
       $result = $conn->query($selectQuery);
       ?>
