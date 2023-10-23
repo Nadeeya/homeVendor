@@ -104,6 +104,19 @@ $shopName = $_GET['shopName'];
                                 <div class="invalid-feedback">Please enter the price of the item in bnd only.</div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text" >Allergy:</span>
+                                <select name="allergy" id="allergy" class="form-control">
+                                    <option value="milk-eggs">Milk/Eggs</option>
+                                    <option value="peanuts">Peanuts</option>
+                                    <option value="soybeans">Soybeans</option>
+                                    <option value="wheat">Wheat</option>
+                                    <option value="fish-sellfish">Fish & Shellfish</option>
+                                    <option value="others">Others</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     </br>
                     <h5>Product image</h5>
