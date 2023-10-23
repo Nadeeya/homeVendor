@@ -6,6 +6,7 @@ $prodName = $_POST['prodName'];
 $category = $_POST['category'];
 $price = $_POST['price'];
 $description = $_POST['description'];
+$allergy = $_POST['allergy'];
 
 $message = [];
 
@@ -20,12 +21,11 @@ if (isset($_POST['upload_product'])) {
         // Upload file to server
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
             // Insert image file name into database
-            $insert = $conn->query("INSERT into product (prodName, image , uploadDate,  description, category, price, vendor)
-            VALUES ('$prodName','$fileName', NOW(), '$description', '$category', '$price', '$shopName')");
+            $insert = $conn->query("INSERT into product (prodName, image , uploadDate,  description, category, price, vendor, allergy)
+            VALUES ('$prodName','$fileName', NOW(), '$description', '$category', '$price', '$shopName', '$allergy')");
             if ($insert) {
                 $statusMsg = "The file " . $fileName . " has been uploaded successfully. This page will redirect you to your home page shortly";
                 header('refresh: 5; url=vendorHomePage.php?shopName=' . $shopName);
-
             } else {
                 $statusMsg = "File upload failed, please try again.";
             }
